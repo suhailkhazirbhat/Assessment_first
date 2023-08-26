@@ -85,7 +85,7 @@ function Pomodro_timer_app() {
   return (
     <Container centerContent mt={25}>
       <Heading as="h1"   mb={6} noOfLines={1} size='lg'>
-     Well Come To Pomodro timer app 
+     Well Come To Timer App 
       </Heading>
       
       <Button
