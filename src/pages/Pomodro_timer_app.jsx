@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Container, Heading, Text, VStack } from '@chakra-ui/react';
 import { TiMediaPause, TiMediaPlay, TiArrowBackOutline } from 'react-icons/ti';
+import Navlink from '../components/Navlink';
 
+// Navlink
 function Pomodro_timer_app() {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
@@ -83,8 +85,15 @@ function Pomodro_timer_app() {
   return (
     <Container centerContent mt={25}>
       <Heading as="h1"   mb={6} noOfLines={1} size='lg'>
-     Well Come To Pomodro timer app
+     Well Come To Pomodro timer app 
       </Heading>
+      
+      <Button
+          size="lg"
+          leftIcon={<TiArrowBackOutline />}
+          colorScheme="gray"
+          onClick={resetTimer}
+        ><Navlink to='/' name='Home' /></Button>
       <VStack spacing={4}>
         <Text fontSize="4xl">
           {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
