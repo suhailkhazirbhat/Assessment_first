@@ -29,7 +29,7 @@ export function Navbar() {
         mx='auto'
         spacing={4}
       >
-        <div>Well Come</div>
+        <h2 style={{paddingLeft:"35px"}} ><strong>WellCome</strong></h2>
         <Spacer />
         {!currentUser && <Navlink to='/login' name='Login' />}
         {!currentUser && <Navlink to='/register' name='Register' />}
