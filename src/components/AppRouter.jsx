@@ -8,15 +8,13 @@ import {
 } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import ForgotPasswordPage from '../pages/ForgotPasswordPage'
-import Homepage from '../pages/Homepage'
 import Loginpage from '../pages/Loginpage'
 import NotfoundPage from '../pages/NotfoundPage'
-// import Profilepage from '../pages/Profilepage'
 import Registerpage from '../pages/Registerpage'
 import ResetPasswordPage from '../pages/ResetPasswordPage'
 import TestPage from '../pages/TestPage'
 import Pomodro_timer_app from '../pages/Pomodro_timer_app'
-// Pomodro_timer_app
+
 export default function AppRouter(props) {
   return (
     <>
@@ -25,10 +23,8 @@ export default function AppRouter(props) {
           <Route exact path='/' component={Loginpage} />
           <ProtectedRoute exact path='/login' component={Loginpage} />
           <ProtectedRoute exact path='/register' component={Registerpage} />
-          {/* <ProtectedRoute exact path='/profile' component={Profilepage} /> */}
           <ProtectedRoute exact path='/test' component={TestPage} />
           <ProtectedRoute exact path='/profile' component={Pomodro_timer_app} />
-          
           <ProtectedRoute
             exact
             path='/forgot-password'
