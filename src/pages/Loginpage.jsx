@@ -9,7 +9,7 @@ import {
   Stack,
   useToast,
 } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaGoogle } from 'react-icons/fa'
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import { Card } from '../components/Card'
@@ -28,23 +28,23 @@ export default function Loginpage() {
   // const mounted = useRef(false)
   const location = useLocation()
 
-  // useEffect(() => {
-  //   mounted.current = true
-  //   return () => {
-  //     mounted.current = false
-  //   }
-  // }, [])
+  useEffect(() => {
+    mounted.current = true
+    return () => {
+      mounted.current = false
+    }
+  }, [])
 
   const mounted = useMounted()
 
   function handleRedirectToOrBack() {
-    // console.log(location?.state)
+    console.log(location?.state)
     history.replace(location.state?.from ?? '/profile')
-    // if (location.state) {
-    //   history.replace(location.state?.from)
-    // } else {
-    //   history.replace('/profile')
-    // }
+    if (location.state) {
+      history.replace(location.state?.from)
+    } else {
+      history.replace('/profile')
+    }
   }
 
   return (
@@ -81,10 +81,10 @@ export default function Loginpage() {
                 })
               })
               .finally(() => {
-                // setTimeout(() => {
-                //   mounted.current && setIsSubmitting(false)
-                //   console.log(mounted.current)
-                // }, 1000)
+                setTimeout(() => {
+                  mounted.current && setIsSubmitting(false)
+                  console.log(mounted.current)
+                }, 1000)
                 mounted.current && setIsSubmitting(false)
               })
           }}
